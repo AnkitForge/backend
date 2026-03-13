@@ -5,14 +5,14 @@ from model.user import db, User
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "your_secret_key"
-app.config["SQLALCHEMY_DATABASE_URI"] = (
-    "postgresql://postgres:Nopassword%4003@localhost/test"
-)
-db.init_app(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = (
+#     "postgresql://postgres:Nopassword%4003@localhost/test"
+# )
+# db.init_app(app)
 
-with app.app_context():
-    db.create_all()
-    print("Test Database tables created successfully...")
+# with app.app_context():
+#     db.create_all()
+#     print("Test Database tables created successfully...")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -100,3 +100,4 @@ def dashboard_method(username=None):
 
 
 app.run(debug=True)
+
